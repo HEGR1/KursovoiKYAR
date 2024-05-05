@@ -1,0 +1,22 @@
+main {
+  gap: 50px;
+}
+main .description {
+  text-indent: 2em;
+  padding: 10px 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    text-align: center;
+    font-size: 28px;
+  }
+  main {
+    gap: max(15px, 3vw);
+  }
+}
+ul li {
+list-style: none;
+}

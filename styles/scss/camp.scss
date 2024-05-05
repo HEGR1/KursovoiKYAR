@@ -1,0 +1,22 @@
+main {
+  .description {
+    text-indent: 2em;
+    padding: 10px 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    // margin-bottom: 20px;
+    border-radius: 15px;
+  }
+  gap: 50px;
+  // h1 {
+  //   margin-bottom: min(50px, 10vh);
+  // }
+}
+@media (max-width: 768px) {
+  h1{
+    text-align: center;
+    font-size: 28px;
+  }
+  main {
+    gap: max(15px, 3vw);
+  }
+}

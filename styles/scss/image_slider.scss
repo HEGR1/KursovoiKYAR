@@ -1,0 +1,87 @@
+.slider-container {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  width: calc(100% - calc(10px));
+  max-height: 300px; /* Размеры блоков */
+}
+
+.slider-wrapper {
+  display: flex;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease; /* Анимация перемещения слайдов */
+  gap: 11px;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 calc(100% / 3 - 10px);
+  height: 100%;
+  transition: transform 0.5s ease; /* Анимация перемещения слайдов */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    width: calc(100% - 10px);
+    background: rgba(0, 0, 0, 0.5); /* Затемнение заднего фона */
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    // padding: 10px;
+  }
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 25px;
+  opacity: 1; /* По умолчанию кнопки видимы */
+  visibility: visible; /* По умолчанию кнопки видимы */
+  transition: opacity 0.5s, visibility 0.5s; /* Добавляем переходы для opacity и visibility */
+  &.hidden {
+    opacity: 0; /* Прозрачность 0 при скрытии */
+    visibility: hidden; /* Скрытие элемента */
+  }
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+@media (max-width: 1024px) {
+  .slider-container {
+    max-width: 690px;
+  }
+  .slide {
+    flex: 0 0 340px;
+  }
+}
+@media (max-width: 768px) {
+  .slider-container {
+    max-width: min(390px, calc(100%));
+  }
+  .slide {
+    flex: 0 0 min(400px, calc(100%));
+  }
+}

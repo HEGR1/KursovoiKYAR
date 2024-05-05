@@ -1,0 +1,65 @@
+table {
+  border-collapse: collapse;
+  width: 100%; /* Устанавливаем относительную ширину */
+}
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #ccc;
+}
+
+thead {
+  background-color: #d2d2d2;
+  color: #000000;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f4c7;
+}
+tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255);
+}
+@media (max-width: 768px) {
+  .slider-container {
+    max-width: min(390px, calc(100%));
+  }
+  .slide {
+    flex: 0 0 min(400px, calc(100%));
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    margin-top: 20px;
+    border-radius: 15px;
+  }
+  tr td {
+    text-align: center;
+    &:nth-child(3) {
+      grid-column: 1 / -1; /* Ячейка занимает все столбцы */
+      order: 1;
+    }
+  }
+  td {
+    border-width: 0px;
+  }
+  tr td:nth-child(1) {
+    order: 2;
+  }
+  tr td:nth-child(2) {
+    order: 4;
+  }
+  tr td:nth-child(4) {
+    order: 3;
+  }
+  tr td:nth-child(5) {
+    order: 5;
+  }
+}
